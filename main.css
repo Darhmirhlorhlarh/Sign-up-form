@@ -4,13 +4,14 @@
     
 }
 body{
-    background-image: url("pink-clouds.jpg");
+    background-image: url("images/pink-clouds.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
     margin-top: 20px;
     color: black;
+    height: 100vh
 }
 .wrapper {
     display:flex;
@@ -55,7 +56,7 @@ body{
     width:350px;
     padding:10px 20px;
     background: white;
-    border: 1px solid gray;
+    border: 2px solid gray;
     border-radius: 5px;
     outline: none;
     color: black;
@@ -74,7 +75,7 @@ body{
     
 .form-group input:hover{
 
-        border-color: red;
+        border-color:black;
     }
     
 div.container> p {
@@ -98,6 +99,21 @@ div.container> p {
     font-family: cursive;
     animation: mymove 5s infinite;
 }
+
+input:valid {
+    border-color: green;
+}
+input:focus :invalid {
+    outline: none;
+}
+.hide .hide1{
+    width: 100%;
+    padding: 0;
+    color: Red;
+    box-sizing: border-box;
+}
+
+
 @keyframes mymove {
     from{background-color:burlywood;}
     to{background-color: powderblue }
@@ -151,7 +167,6 @@ div.container> p {
       body{
         Margin: 40px;} 
     }
-    
 /*@media screen and (max-width: 670px) {
     .move {
         display: flex;
@@ -160,8 +175,7 @@ div.container> p {
         width: 350px;
         padding: 10px;
         margin: 10px 0px;}
-        
     body{
-    margin: 40px;} 
-       }*/
-}
+    margin: 10px;} 
+        
+}*/
