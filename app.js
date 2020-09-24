@@ -10,6 +10,7 @@ const confirmPassword = document.querySelector(".confirm-password");
 const submit = document.querySelector(".submit");
 
 
+
 firstName.addEventListener("input", function(event){
     if (firstName.validity.valid){
         hideMe.innerHTML = "";
@@ -85,20 +86,29 @@ submit.addEventListener("click", function(event) {
     }
 });
 function passwordError() {
-    let pass = /(?=.*\d)(?=.*[a-z]) (?=.*[A-Z]) .{6,}/;
+    let hasLower = /[a-z]/g;
+    let hasUpper = /[A-Z]/g;
+    let hasNumber = /[0-9]/g;
+
     if (password.validity.valueMissing) {
         showPassword.textContent = "Please Input a Password";
         
     }
-    else if ( !pass.test(password.value)) {
-        showPassword.textContent= "Password must contain at least 1 number and 1 Uppercase and 1 lowercase letter"
+    else if (!password.value.match(hasLower)) {
+        showPassword.textContent= "Password must contain at least 1 lowercase letter "
+    }
+    else if (!password.value.match(hasUpper)) {
+        showPassword.textContent= "Password must contain at least 1 UpperCase letter "
+    }
+    else if (!password.value.match(hasNumber)) {
+        showPassword.textContent= "Password must contain at least 1 number "
     }
     else if (password.validity.tooShort) {
         showPassword.textContent = "Password must be 6 characters or more"
     }
     
 }
-
+//validate password confirmation
 confirmPassword.addEventListener("input", function(event){
     if (confirmPassword.validity.valid){
         showConfirm.innerHTML = "";
@@ -122,7 +132,31 @@ function confirmError() {
         showConfirm.textContent = "Confirm Password";
         
     }
-    else if (confirmPassword.value != password.value ) {
-        showConfirm.textContent= "Passwords does not Match"
+    else if (password.value !== confirmPassword.value) {
+        showConfirm.textContent= "Passwords does not Match";
     }
 }
+const togglePassword = document.querySelector("#toggle-password");
+togglePassword.addEventListener("click", function(e){
+    // toggle the type attribute
+    if (password.type === "password") {
+    password.type = "text";
+    this.classList.toggle("fa-eye-slash");
+  } else {
+    password.type = "password";
+    this.classList.toggle("fa-eye-slash");
+    
+  }
+});
+const togglePassword2 = document.querySelector("#toggle-password2");
+togglePassword2.addEventListener("click", function(e){
+    // toggle the type attribute
+    if (confirmPassword.type === "password") {
+    confirmPassword.type = "text";
+    this.classList.toggle("fa-eye-slash");
+  } else {
+    confirmPassword.type = "password";
+    this.classList.toggle("fa-eye-slash");
+    
+  }
+});
