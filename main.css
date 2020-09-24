@@ -63,6 +63,14 @@ body{
     font-size:15px;
     padding-right: 40px;
 }
+.icons{
+  display: flex;
+  flex-direction: row;
+} 
+.i{
+  margin-right:-30px;
+} 
+
 .submit {
     width: 350px;
     color: #dddddd;
@@ -86,19 +94,6 @@ div.container> p {
     color: red;
 }
 
-.move {
-    border: none;
-    border-radius: 10px;
-    background: white;
-    text-align: center;
-    align-items: center;
-    width: 350px;
-    color: teal;
-    padding: 10px;
-    margin: 0px auto;
-    font-family: cursive;
-    animation: mymove 5s infinite;
-}
 
 input:valid {
     border-color: green;
@@ -106,18 +101,7 @@ input:valid {
 input:focus :invalid {
     outline: none;
 }
-.hide .hide1{
-    width: 100%;
-    padding: 0;
-    color: Red;
-    box-sizing: border-box;
-}
 
-
-@keyframes mymove {
-    from{background-color:burlywood;}
-    to{background-color: powderblue }
-}
 
 @media screen and (max-width: 480px) {
         .try {
@@ -152,21 +136,9 @@ input:focus :invalid {
        color: burlywood;
        font-size: 12px;
         }
-
-        .move {
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        width: 300px;
-        padding: 10px;
-        margin:  30px 20px;
-        margin-left: 0px;
-    
-    
-}
       body{
-        Margin: 40px;} 
-    }
+        margin: 40px;} 
+    
 /*@media screen and (max-width: 670px) {
     .move {
         display: flex;

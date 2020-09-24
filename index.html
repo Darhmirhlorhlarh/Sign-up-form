@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b81e061793.js" crossorigin="anonymous"></script>
     <title>Sign up Form</title>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -35,15 +36,18 @@
                     <span class="hide1"></span> 
                 </div>              
 
-                <div class="form-group">
-                    <input type="password" class="password" minlength="6" placeholder="Password" required autofocus>
+                <div class="form-group icons" >
+                    <input type="password" class="password"  placeholder="Password" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                    minlength = "6" required autofocus  >
+                    <i class="far fa-eye"id="toggle-password"></i>
                 </div>
                 <div class="validation-messages">
                     <span class="hide2"></span> 
                 </div>  
 
-                <div class="form-group">
+                <div class="form-group icons">
                     <input type="password" class="confirm-password"  placeholder="Confirm Password" required autofocus>
+                     <i class="far fa-eye" id="toggle-password2"></i>
                 </div>
                 <div class="validation-messages">
                     <span class="hide3"></span> 
@@ -57,11 +61,7 @@
             </div>
         </div>
     </main>
-    <footer> 
-    <div class="move">
-    <h2>Coded with love by Damilola</h2>
-    </div>
-    </footer>
+ 
     <script src="app.js"></script>
 </body>
 </html>
